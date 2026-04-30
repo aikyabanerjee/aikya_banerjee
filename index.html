@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Personal Website</title>
+
+<style>
+
+/* ===============================
+   GLOBAL TYPOGRAPHY
+=============================== */
+
+body {
+
+margin: 0;
+
+display: flex;
+
+font-family: "Times New Roman", Times, serif;
+
+background: #FFFAF0;
+
+color: #222;
+
+line-height: 1.65;
+
+font-size: 17px;
+
+}
+
+/* ===============================
+   SIDEBAR
+=============================== */
+
+.navbar {
+
+width: 250px;
+
+min-width: 250px;
+
+flex-shrink: 0;
+
+min-height: 100vh;
+
+display: flex;
+
+flex-direction: column;
+
+background: linear-gradient(
+180deg,
+#0b1e3d,
+#8b1e3f
+);
+
+padding-top: 10px;
+
+}
+
+/* Name */
+
+.name-box {
+
+color: white;
+
+font-size: 28px;
+
+font-weight: bold;
+
+padding: 20px;
+
+border-bottom: 1px solid rgba(255,255,255,0.3);
+
+letter-spacing: 0.6px;
+
+}
+
+/* Buttons */
+
+.navbar button {
+
+background: none;
+
+border: none;
+
+color: white;
+
+padding: 16px 20px;
+
+font-size: 16px;
+
+text-align: left;
+
+cursor: pointer;
+
+transition: 0.2s;
+
+}
+
+.navbar button:hover {
+
+background: rgba(255,255,255,0.15);
+
+}
+
+.navbar button.active-btn {
+
+background: rgba(255,255,255,0.25);
+
+font-size: 18px;
+
+font-weight: bold;
+
+border-left: 5px solid white;
+
+}
+
+/* ===============================
+   WINDOWS
+=============================== */
+
+.window {
+
+display: none;
+
+flex-grow: 1;
+
+padding: 20px 70px;
+
+max-width: 1100px;
+
+}
+
+.window.active {
+
+display: block;
+
+}
+
+/* ===============================
+   STYLISH HEADERS
+=============================== */
+
+.section {
+
+margin-top: 0px;
+
+max-width: 900px;
+
+}
+
+.section h2 {
+
+position: relative;
+
+font-size: 24px;
+
+margin-bottom: 10px;
+
+padding-bottom: 2px;
+
+}
+
+/* Elegant underline */
+
+.section h2::after {
+
+content: "";
+
+position: absolute;
+
+left: 0;
+
+bottom: 0;
+
+width: 100px;
+
+height: 3px;
+
+background: linear-gradient(
+90deg,
+#0b1e3d,
+#8b1e3f
+);
+
+border-radius: 2px;
+
+}
+
+/* ===============================
+   PARAGRAPHS
+=============================== */
+
+p {
+
+text-align: justify;
+
+margin-bottom: 16px;
+
+}
+
+/* ===============================
+   ABOUT SECTION
+=============================== */
+
+.about-container {
+
+display: flex;
+
+gap: 40px;
+
+align-items: flex-start;
+
+}
+
+.profile-left {
+
+width: 310px;
+
+flex-shrink: 0;
+
+}
+
+.profile-photo {
+
+width: 300px;
+
+height: 400px;
+
+object-fit: cover;
+
+border: 0.01px solid #222;
+
+}
+
+/* ===============================
+   ICON BUTTONS
+=============================== */
+
+a {
+
+color: #B22222;
+
+text-decoration: none;
+
+}
+
+a:hover {
+
+text-decoration: underline;
+
+}
+
+.profile-links {
+
+margin-top: 14px;
+
+display: flex;
+
+justify-content: center;
+
+gap: 10px;
+
+}
+
+.icon-btn {
+
+width: 40px;
+
+height: 40px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+border-radius: 50%;
+
+transition: 0.2s;
+
+}
+
+.icon-btn img {
+
+width: 20px;
+
+height: 20px;
+
+filter: brightness(0) invert(1);
+
+}
+
+.orcid-btn { background: #A6CE39; }
+
+.scholar-btn { background: #4285F4; }
+
+.cv-btn {
+
+background: #444;
+
+color: white;
+
+font-size: 14px;
+
+font-weight: bold;
+
+}
+
+.icon-btn:hover {
+
+transform: scale(1.1);
+
+}
+
+/* ===============================
+   Special Fonts
+================================ */
+
+.highlight-red-italic {
+    color: #B22222;
+    font-style: italic;
+}
+
+.highlight-red {
+    color: #B22222;
+    font-weight: bold;
+}
+
+.highlight-blue-italic {
+    color: #4285F4;
+    font-style: italic;
+}
+
+.highlight-blue {
+    color: #4285F4;
+    font-weight: bold;
+}
+
+.highlight-bold {
+    font-weight: bold;
+}
+
+.highlight-italics {
+    font-style: italic;
+}
+
+.highlight-bold-italics {
+    font-weight: bold;
+    font-style: italic;
+}
+/* ===============================
+   PUBLICATIONS
+=============================== */
+
+.pub-list {
+
+counter-reset: pub-counter 5;
+
+padding-left: 0;
+
+}
+
+.pub-item {
+
+list-style: none;
+
+counter-increment: pub-counter -1;
+
+margin-bottom: 14px;
+
+padding-left: 18px;
+
+text-indent: -18px;
+
+}
+
+.pub-item::before {
+
+content: counter(pub-counter) ". ";
+
+font-weight: bold;
+
+}
+
+/* ===============================
+   TABLE
+=============================== */
+
+.teaching-table {
+
+width: 100%;
+
+border-collapse: collapse;
+
+margin-top: 5px;
+
+}
+
+.teaching-table th,
+.teaching-table td {
+
+border: 1px solid #999;
+
+padding: 4px;
+
+text-align: left;
+
+}
+
+.teaching-table th {
+
+background: #f0f0f0;
+
+}
+
+/* ===============================
+   GALLERY
+=============================== */
+
+.gallery {
+
+display: flex;
+
+flex-direction: column;
+
+gap: 28px;
+
+margin-top: 25px;
+
+}
+
+.gallery-item {
+
+display: flex;
+
+gap: 25px;
+
+align-items: flex-start;
+
+}
+
+.gallery-item img {
+
+width: 50%;
+
+border-radius: 6px;
+
+box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+
+border: 0.4px solid #222;
+
+}
+
+/* Description box */
+
+.gallery-description-box {
+
+width: 30%;
+
+background: white;
+
+padding: 18px;
+
+border-radius: 6px;
+
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+font-size: 16px;
+
+border: 0.01px solid #222;
+
+}
+
+.gallery-description-box h3 {
+
+margin-top: 0;
+
+color: #0b1e3d;
+
+}
+
+/* ===============================
+   MOBILE
+=============================== */
+
+@media (max-width: 800px) {
+
+body {
+
+flex-direction: column;
+
+}
+
+/* Sidebar becomes topbar */
+
+.navbar {
+
+width: 100%;
+
+flex-direction: row;
+
+flex-wrap: wrap;
+
+min-height: auto;
+
+}
+
+.name-box {
+
+width: 100%;
+
+text-align: center;
+
+}
+
+/* Buttons horizontal */
+
+.navbar button {
+
+flex-grow: 1;
+
+text-align: center;
+
+border-left: none;
+
+font-size: 15px;
+
+}
+
+.window {
+
+padding: 25px;
+
+}
+
+.about-container {
+
+flex-direction: column;
+
+align-items: center;
+
+text-align: center;
+
+}
+
+/* Gallery mobile */
+
+.gallery-item {
+
+flex-direction: column;
+
+}
+
+.gallery-item img {
+
+width: 100%;
+
+}
+
+.gallery-description-box {
+
+width: 100%;
+
+margin-top: 12px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ===============================
+     SIDEBAR
+================================ -->
+
+<div class="navbar">
+
+<div class="name-box">
+Aikya Banerjee
+</div>
+
+<button onclick="showWindow('home')" class="active-btn">
+Home
+</button>
+
+<button onclick="showWindow('research')">
+Research
+</button>
+
+<button onclick="showWindow('teaching')">
+Teaching
+</button>
+
+<button onclick="showWindow('gallery')">
+Art Gallery
+</button>
+
+</div>
+
+<!-- ===============================
+     HOME
+================================ -->
+
+<div id="home" class="window active">
+
+<h2>About</h2>
+
+<div class="about-container">
+
+<div class="profile-left">
+
+<img src="profile.jpg" class="profile-photo">
+
+<div class="profile-links">
+
+<a href="https://orcid.org/0009-0004-6288-0362" class="icon-btn orcid-btn">
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/orcid.svg">
+</a>
+
+<a href="https://scholar.google.com/citations?user=y1PQC8oAAAAJ&hl=en" class="icon-btn scholar-btn">
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googlescholar.svg">
+</a>
+
+<a href="CV.pdf" class="icon-btn cv-btn">
+CV
+</a>
+
+</div>
+
+</div>
+
+<div>
+<p>
+Hello! 
+</p>
+
+<p>I am a first-year <span class="highlight-italics">D.Phil.</span> student at the <span class="highlight-italics">Department of Physics</span> (Astrophysics sub-department), <span class="highlight-italics">University of Oxford, U.K.</span>, currently working with <a href="https://www-thphys.physics.ox.ac.uk/people/AlexanderSchekochihin/" target="_blank">Prof. Alex Schekochihin</a> and <a href="https://scholar.google.com/citations?user=1e8E6KcAAAAJ&hl=en" target="_blank">Dr. Archie Bott</a>.
+My studentship is funded by the  
+<span class="highlight-italics">Clarendon Fund Scholarship</span> 
+(<a href="https://www.ox.ac.uk/clarendon/scholar-class-lists/scholars-2020-21-to-2029-30" target="_blank">link</a>).
+My broad research interests are --- <span class="highlight-italics">plasma physics</span>, <span class="highlight-italics">turbulence</span>, and <span class="highlight-italics">statistical mechanics</span>. 
+I am currently working on anomalous transport properties in weakly collisional plasma.
+</p>
+
+<p>
+Before coming to Oxford, I did Integrated B.S.-M.S. in Physical Sciences from 
+<span class ="highlight-italics"> Indian Institute of Science Education and Research (IISER) Kolkata</span>, where I primarily worked on non-equilibrium statistical mechanics and turbulence.
+I completed my MS thesis on <span class="highlight-italics">Many Body Chaos in Fully Developed Turbulence</span> (<a href="thesis.pdf" target="_blank">Thesis</a>) from 
+<span class="highlight-italics"> International Centre for Theoretical Sciences (ICTS), Bengaluru</span> (Mentor: 
+<a href="https://www.icts.res.in/people/samriddhi-sankar-ray" target="_blank">Prof. Samriddhi Sankar Ray</a>).
+</p>
+
+<p>
+Thanks for dropping by! Feel free to reach out if you have any queries.
+</p>
+
+</div>
+
+</div>
+
+<p>
+Upcoming: Plasma seminar on <span class="highlight-italics">Resistivity of a plasma in the kinetic regime</span> (2PM on 5th May, 2026 @SL Room)
+<p>
+Address: Department of Physics, University of Oxford, Denys Wilkinson Building, Keble Road, Oxford OX1 3RH, U.K.<br>
+Email: aikya [dot] banerjee [at] merton [dot] ox [dot] ac [dot] uk
+
+</div>
+
+<!-- ===============================
+     RESEARCH
+================================ -->
+
+<div id="research" class="window">
+
+<div class="section">
+
+<h2>Overview</h2>
+
+<p>
+
+My primary area of interest is plasma physics, turbulence and statistical mechanics.
+As a part of my DPhil studentship at Oxford, I am currently studying anomalous transport properties in weakly collisional plasma with a particular interest in anomalous diffusion due to micro-instabilities under the supervision of <a href="https://scholar.google.com/citations?user=1e8E6KcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Dr. Archie Bott</a> and <a href="https://www-thphys.physics.ox.ac.uk/people/AlexanderSchekochihin/" target="_blank" rel="noopener noreferrer">Prof. Alex Schekochihin</a>.
+My work contains both analytical studies and numerical experiments, particularly <span class="highlight-italics">particle in cell</span> simulation.<br>
+<!--
+(Current collaborators @Oxford: <a href="https://astro.prakritipc.com/" target="_blank" rel="noopener noreferrer">Dr. Prakriti Pal Chowdhury</a>, <a href="https://pablojbilbao.com/" target="_blank" rel="noopener noreferrer">Dr. Pablo J. Bilbao</a>, <a href="https://www.physics.ox.ac.uk/our-people/wierzchucka" target="_blank" rel="noopener noreferrer">Agnieszka Wierzchucka</a>, <a href="ildar.khabibullin@physics.ox.ac.uk" target="_blank" rel="noopener noreferrer">Dr. Ildar Khabibulin</a>)
+-->
+</p>
+
+<p>
+During my undergraduate years, I have worked in turbulence, statistical mechanics and magneto-hydrodynamics particularly nature of turbulent flow and its statistics, non-equilibrium phase separation, criticality and marginality and decaying MHD turbulence.
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>Publications</h2>
+
+<ol class="pub-list" reversed>
+<!--
+<li class="pub-item">
+
+<span class="highlight-italics">
+Inertial-range correlation of velocity gradients in fully developed turbulence
+</span>,
+A.Dey,
+R. Mukherjee
+<strong>A. Banerjee</strong>,  
+S. S. Ray,
+(Manuscript under preparation)
+</li>
+
+<li class="pub-item">
+<span class="highlight-italics">
+Matrix product ansatz in two dimensions
+</span>,
+
+C.G.Roy,
+<strong>A. Banerjee</strong>,  
+P. K. Mohanty,
+(Manuscript under preparation)
+</li>
+-->
+<li class="pub-item">
+
+<span class="highlight-italics">
+Intermittent fluctuations determine the nature of chaos in turbulence
+</span>,
+
+<strong>A. Banerjee</strong>,  
+R. Mukherjee,  
+S. D. Murugan,  
+S. Bhattacharjee,  
+S. S. Ray,
+
+<a href="https://journals.aps.org/prl/accepted/10.1103/1dj2-zw28"
+target="_blank">
+
+Physical Review Letters (Accepted)
+
+</a>
+
+</li>
+
+<li class="pub-item">
+
+<span class="highlight-italics">
+
+Turbulent magnetic decay controlled by two conserved quantities
+
+</span>,
+
+A. Brandenburg,  
+<strong>A. Banerjee</strong>,
+
+<a href="https://doi.org/10.1017/S0022377824001508"
+target="_blank">
+
+Journal of Plasma Physics 91 (1), E5 (2025)
+
+</a>
+
+</li>
+
+
+<li class="pub-item">
+
+<span class="highlight-italics">
+
+Geometric percolation in the Ashkin Teller Model
+
+</span>,
+
+<strong>A. Banerjee</strong>,  
+P. Jana,  
+P. K. Mohanty,
+
+<a href="https://doi.org/10.1103/PhysRevB.111.014403"
+target="_blank">
+
+Physical Review B 111 (1), 014403 (2025)
+
+</a>
+
+</li>
+
+
+<li class="pub-item">
+
+<span class="highlight-italics">
+
+Site-percolation transition of run-and-tumble particles
+
+</span>,
+
+S. K. Saha,  
+<strong>A. Banerjee</strong>,  
+P. K. Mohanty,
+
+<a href="https://doi.org/10.1039/D4SM00838C"
+target="_blank">
+
+Soft Matter 20 (47), 9503–9509 (2024)
+
+</a>
+
+</li>
+
+</ol>
+
+</div>
+
+<div class="section">
+
+<h2>Previous Research Experiences</h2>
+
+<ul>
+
+<li>
+MS Thesis (Aug, 24 - Apr, 25)— International Centre for Theoretical Sciences, Bengaluru. (Advisor: <a href="https://www.icts.res.in/people/samriddhi-sankar-ray" target="_blank">Prof. Samriddhi Sankar Ray</a>) Thesis title: <span class="highlight-italics">Many Body Chaos in Fully Developed Turbulence</span> (<a href="thesis.pdf" target="_blank">Thesis</a>)<br>
+<!--
+Other collaborators @ICTS, 
+<ul>
+<a href="https://scholar.google.com/citations?user=PgCMPFsAAAAJ&hl=en" target="_blank">Ritwik Mukherjee</a> (PhD Student, ICTS, India), <a href="https://scholar.google.com/citations?user=p6iBPvAAAAAJ&hl=en" target="blanck">Dr. Sugan D. Murugan</a> (Post Doc, John's Hopkins, USA), <a href="https://scholar.google.com/citations?hl=en&user=sd_UpCkAAAAJ">Prof. Subhro Bhattacharjee</a> (ICTS, India), Anwesha Dey (PhD Student, ICTS, India)
+</ul>
+-->
+</li>
+
+<li>
+Student (Mar,23 - May, 24)-- Indian Institute of Science Education and Research Kolkata (Mentor: <a href="https://scholar.google.com/citations?user=CHrmyQIAAAAJ&hl=en" target="_blank">Prof. P. K. Mohanty</a>)
+<!--
+Other collaborators @IISER-K,
+<ul>
+<a href="https://scholar.google.com/citations?hl=en&user=atdkrEcAAAAJ" target="_blank">Soumya Kanti Saha</a> (PhD Student, JGU Mainz, Germany), 
+<a href="https://scholar.google.com/citations?hl=en&user=eaWVuMgAAAAJ" target="_blank">Chandraniva Guha Roy</a> (PhD Student, MPI-PKS, Germany), 
+<a href="https://scholar.google.com/citations?user=CHrmyQIAAAAJ&hl=en" target="_blank">Priyajit Jana</a> (PhD Student, Univ of Cyprus, Cyprus)
+</ul>
+-->
+</li>
+
+<li>
+Remote Internship (Mar - June, 24)-- Nordic Institute of Theoretical Physics (NPRDITA) (Mentor: <a href="https://axelbrandenburg.github.io/" target="_blank">Prof. Axel Brandenburg</a>)<br>
+On <span class="highlight-italics">Relevant decay law and conserved quantities in decaying MHD turbulence</span>.
+</li>
+
+<li>
+Summer Internship (May - July, 24)-- Johannes Gutenburg University of Mainz (Mentor: <a href="https://scholar.google.com/citations?hl=de&user=RTshg4wAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Prof. Peter Virnau</a>)<br>
+This project was funded by the German Academic Exchange Service (DAAD) - Working Internship in Science and Engineering (WISE) programme.
+</li>
+
+</ul>
+
+</div>
+</div>
+
+<!-- ===============================
+     TEACHING
+================================ -->
+
+<div id="teaching" class="window">
+<div class="section">
+
+<h2>Current Course</h2>
+
+I am currently a Graduate Teaching Assistant in the A1 Statistical & Thermal Physics course at Merton College, University of Oxford. Class schedules for Trinity-2026 term is the following. For details regarding the course please check Prof. Alex Schekochihin's course <a href="https://www-thphys.physics.ox.ac.uk/people/AlexanderSchekochihin/">page</a>
+<table class="teaching-table">
+
+<tr>
+
+<th>Week</th>
+<th>Date</th>
+<th>Time</th>
+<th>Place</th>
+<th>Year</th>
+<th>Class / Tutes</th>
+<th>Notes</th>
+
+</tr>
+
+<tr>
+<td>III</td>
+<td>May 13 (Wed)</td> 
+<td>16:30-17:30</td>
+<td>Grove 1.8</td>
+<td>2</td> 
+<td>A1 Revision Tute-2: Paulius Kalinauskas & Haotian Wang</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>17:30-19:00</td> 
+<td>Grove 1.8</td>
+<td>2</td> 
+<td>A1 Revision Tute-2: Ethan Kelvin, Seb Maslanek & Noah Yudkin</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>May 14 (Thu)</td> 
+<td>17:00-18:00</td>
+<td>Grove 1.8</td>
+<td>2</td> 
+<td>A1 Revision Tute-2: Sophie Neville & Tabitha Shearer</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>18:00-19:00</td> 
+<td>Grove 1.8</td>
+<td>2</td> 
+<td>A1 Revision Tute-2: Deevam Sharma & Nell Wheeler</td>
+<td></td>
+</tr>
+
+<tr>
+<td>IV</td>
+<td>May 21 (Thu)</td>
+<td>17:00-19:00</td> 
+<td>Grove 1.8</td>
+<td>2</td> 
+<td>A1 Revision Class-2</td>
+<td></td>
+</tr>
+
+
+<tr>
+<td>V</td>
+<td>May 27 (Wed)</td> 
+<td>16:30-17:30</td>
+<td>Grove 1.8</td>
+<td>2</td> 
+<td>A1 Revision Tute-3: Paulius Kalinauskas & Haotian Wang</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>17:30-19:00</td> 
+<td>Grove 1.8</td>
+<td>2</td> 
+<td>A1 Revision Tute-3: Ethan Kelvin, Seb Maslanek & Noah Yudkin</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>May 28 (Thu)</td> 
+<td>17:00-18:00</td>
+<td>Grove 1.8</td>
+<td>2</td> 
+<td>A1 Revision Tute-3: Sophie Neville & Tabitha Shearer</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>18:00-19:00</td> 
+<td>Grove 1.8</td>
+<td>2</td> 
+<td>A1 Revision Tute-3: Deevam Sharma & Nell Wheeler</td>
+<td></td>
+</tr>
+
+<tr>
+<td>VI</td>
+<td>June 1 (Mon)</td>
+<td>17:00-19:00</td> 
+<td>Grove 1.8</td>
+<td>2</td> 
+<td>A1 Revision Class-3</td>
+<td></td>
+</tr>
+
+
+
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>Previous Teaching Experiences</h2>
+
+<ul>
+
+<li>
+Teaching Assistant —
+<strong>Thermal Physics</strong> (PH2202) for second year undergraduate students at Indian Institute of Science Education and Research Kolkata in Spring-2024. (Course Instructor: Prof. Koushik Dutta).
+</li>
+
+<li>
+Teaching Assistant —
+<strong>Mechanics-I</strong> (PH1101) for first year undergraduate students at Indian Institute of Science Education and Research Kolkata in Fall-2023. (Course Instructor: Prof. Golam Mortuza Hossein).
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- ===============================
+     GALLERY
+================================ -->
+
+<div id="gallery" class="window">
+<div class="gallery">
+
+<div class="gallery-item">
+
+<img src="example1.jpg">
+
+<div class="gallery-description-box">
+
+<h3>Landscape (2017)</h3>
+
+<p>
+
+Watercolor on A4 paper.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="example2.jpg">
+
+<div class="gallery-description-box">
+
+<h3>Nature (2020-21)</h3>
+
+<p>
+
+Acrylic on wall (6ft x 4ft).
+
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="example3.jpg">
+
+<div class="gallery-description-box">
+
+<h3>Path (2015)</h3>
+
+<p>
+
+Watercolor on paper (A4 paper).
+
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="example4.jpg">
+
+<div class="gallery-description-box">
+
+<h3>Indian village(2016)</h3>
+
+<p>
+
+Watercolor on A4 paper.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="example5.jpg">
+
+<div class="gallery-description-box">
+
+<h3>Indian village (2021)</h3>
+
+<p>
+
+Acrylic on canvas.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===============================
+     SCRIPT
+================================ -->
+
+<script>
+
+function showWindow(id) {
+
+let windows =
+document.getElementsByClassName("window");
+
+let buttons =
+document.querySelectorAll(".navbar button");
+
+for (let i = 0; i < windows.length; i++) {
+
+windows[i].classList.remove("active");
+
+}
+
+buttons.forEach(btn =>
+btn.classList.remove("active-btn")
+);
+
+document.getElementById(id)
+.classList.add("active");
+
+event.target.classList
+.add("active-btn");
+
+}
+
+</script>
+
+</body>
+
+</html>
