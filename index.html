@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aikya Banerjee</title>
 
 <style>
+
 /* ===============================
    GLOBAL TYPOGRAPHY
 =============================== */
 
 body {
-    margin: 0;
-    display: flex;
-    font-family: "Times New Roman", Times, serif;
-    background: #FFFAF0;
-    color: #222;
-    line-height: 1.65;
-    font-size: 17px;
-}
 
-p {
-    text-align: justify;
-    margin-bottom: 16px;
+margin: 0;
+
+display: flex;
+
+font-family: "Times New Roman", Times, serif;
+
+background: #FFFAF0;
+
+color: #222;
+
+line-height: 1.65;
+
+font-size: 17px;
+
 }
 
 /* ===============================
@@ -30,49 +36,85 @@ p {
 =============================== */
 
 .navbar {
-    width: 250px;
-    min-width: 250px;
-    flex-shrink: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(
-        180deg,
-        #0b1e3d,
-        #8b1e3f
-    );
-    padding-top: 10px;
+
+width: 250px;
+
+min-width: 250px;
+
+flex-shrink: 0;
+
+min-height: 100vh;
+
+display: flex;
+
+flex-direction: column;
+
+background: linear-gradient(
+180deg,
+#0b1e3d,
+#8b1e3f
+);
+
+padding-top: 10px;
+
 }
+
+/* Name */
 
 .name-box {
-    color: white;
-    font-size: 28px;
-    font-weight: bold;
-    padding: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-    letter-spacing: 0.6px;
+
+color: white;
+
+font-size: 28px;
+
+font-weight: bold;
+
+padding: 20px;
+
+border-bottom: 1px solid rgba(255,255,255,0.3);
+
+letter-spacing: 0.6px;
+
 }
 
+/* Buttons */
+
 .navbar button {
-    background: none;
-    border: none;
-    color: white;
-    padding: 16px 20px;
-    font-size: 16px;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.2s;
+
+background: none;
+
+border: none;
+
+color: white;
+
+padding: 16px 20px;
+
+font-size: 16px;
+
+text-align: left;
+
+cursor: pointer;
+
+transition: 0.2s;
+
 }
 
 .navbar button:hover {
-    background: rgba(255,255,255,0.15);
+
+background: rgba(255,255,255,0.15);
+
 }
 
 .navbar button.active-btn {
-    background: rgba(255,255,255,0.25);
-    font-size: 18px;
-    font-weight: bold;
-    border-left: 5px solid white;
+
+background: rgba(255,255,255,0.25);
+
+font-size: 18px;
+
+font-weight: bold;
+
+border-left: 5px solid white;
+
 }
 
 /* ===============================
@@ -80,15 +122,21 @@ p {
 =============================== */
 
 .window {
-    display: none;
-    flex-grow: 1;
-    padding: 20px 70px;
-    max-width: 1100px;
-    box-sizing: border-box;
+
+display: none;
+
+flex-grow: 1;
+
+padding: 20px 70px;
+
+max-width: 1100px;
+
 }
 
 .window.active {
-    display: block;
+
+display: block;
+
 }
 
 /* ===============================
@@ -96,30 +144,61 @@ p {
 =============================== */
 
 .section {
-    margin-top: 0;
-    max-width: 900px;
+
+margin-top: 0px;
+
+max-width: 900px;
+
 }
 
 .section h2 {
-    position: relative;
-    font-size: 24px;
-    margin-bottom: 10px;
-    padding-bottom: 2px;
+
+position: relative;
+
+font-size: 24px;
+
+margin-bottom: 10px;
+
+padding-bottom: 2px;
+
 }
 
+/* Elegant underline */
+
 .section h2::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(
-        90deg,
-        #0b1e3d,
-        #8b1e3f
-    );
-    border-radius: 2px;
+
+content: "";
+
+position: absolute;
+
+left: 0;
+
+bottom: 0;
+
+width: 100px;
+
+height: 3px;
+
+background: linear-gradient(
+90deg,
+#0b1e3d,
+#8b1e3f
+);
+
+border-radius: 2px;
+
+}
+
+/* ===============================
+   PARAGRAPHS
+=============================== */
+
+p {
+
+text-align: justify;
+
+margin-bottom: 16px;
+
 }
 
 /* ===============================
@@ -127,31 +206,37 @@ p {
 =============================== */
 
 .about-container {
-    width: 100%;
-    max-width: 760px;
+
+display: flex;
+
+gap: 40px;
+
+align-items: flex-start;
+
 }
 
 .profile-left {
-    width: 300px;
-    margin-bottom: 22px;
+
+width: 310px;
+
+flex-shrink: 0;
+
 }
 
 .profile-photo {
-    width: 300px;
-    height: 400px;
-    object-fit: cover;
-    border: 0.01px solid #222;
-    display: block;
-}
 
-.about-text {
-    width: 100%;
-    max-width: 760px;
-}
+width: 300px;
 
-.address-block {
-    max-width: 760px;
-    margin-top: 18px;
+height: 400px;
+
+object-fit: cover;
+
+object-position: center;
+
+border: 0.01px solid #222;
+
+display: block;
+
 }
 
 /* ===============================
@@ -159,59 +244,84 @@ p {
 =============================== */
 
 a {
-    color: #B22222;
-    text-decoration: none;
+
+color: #B22222;
+
+text-decoration: none;
+
 }
 
 a:hover {
-    text-decoration: underline;
+
+text-decoration: underline;
+
 }
 
 .profile-links {
-    margin-top: 14px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+
+margin-top: 14px;
+
+display: flex;
+
+justify-content: center;
+
+gap: 10px;
+
 }
 
 .icon-btn {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: 0.2s;
+
+width: 40px;
+
+height: 40px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+border-radius: 50%;
+
+transition: 0.2s;
+
 }
 
 .icon-btn img {
-    width: 20px;
-    height: 20px;
-    filter: brightness(0) invert(1);
+
+width: 20px;
+
+height: 20px;
+
+filter: brightness(0) invert(1);
+
 }
 
-.orcid-btn {
-    background: #A6CE39;
-}
+.orcid-btn { background: #A6CE39; }
 
-.scholar-btn {
-    background: #4285F4;
-}
+.scholar-btn { background: #4285F4; }
 
 .cv-btn {
-    background: #444;
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
+
+background: #444;
+
+color: white;
+
+font-size: 14px;
+
+font-weight: bold;
+
 }
 
 .icon-btn:hover {
-    transform: scale(1.1);
+
+transform: scale(1.1);
+
 }
 
 /* ===============================
-   SPECIAL FONTS
-=============================== */
+   Special Fonts
+================================ */
 
 .highlight-red-italic {
     color: #B22222;
@@ -245,27 +355,38 @@ a:hover {
     font-weight: bold;
     font-style: italic;
 }
-
 /* ===============================
    PUBLICATIONS
 =============================== */
 
 .pub-list {
-    counter-reset: pub-counter 7;
-    padding-left: 0;
+
+counter-reset: pub-counter 7;
+
+padding-left: 0;
+
 }
 
 .pub-item {
-    list-style: none;
-    counter-increment: pub-counter -1;
-    margin-bottom: 14px;
-    padding-left: 18px;
-    text-indent: -18px;
+
+list-style: none;
+
+counter-increment: pub-counter -1;
+
+margin-bottom: 14px;
+
+padding-left: 18px;
+
+text-indent: -18px;
+
 }
 
 .pub-item::before {
-    content: counter(pub-counter) ". ";
-    font-weight: bold;
+
+content: counter(pub-counter) ". ";
+
+font-weight: bold;
+
 }
 
 /* ===============================
@@ -273,20 +394,30 @@ a:hover {
 =============================== */
 
 .teaching-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 5px;
+
+width: 100%;
+
+border-collapse: collapse;
+
+margin-top: 5px;
+
 }
 
 .teaching-table th,
 .teaching-table td {
-    border: 1px solid #999;
-    padding: 4px;
-    text-align: left;
+
+border: 1px solid #999;
+
+padding: 4px;
+
+text-align: left;
+
 }
 
 .teaching-table th {
-    background: #f0f0f0;
+
+background: #f0f0f0;
+
 }
 
 /* ===============================
@@ -294,43 +425,65 @@ a:hover {
 =============================== */
 
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 32px;
-    margin-top: 25px;
-    max-width: 900px;
+
+display: flex;
+
+flex-direction: column;
+
+gap: 28px;
+
+margin-top: 25px;
+
 }
 
 .gallery-item {
-    width: 100%;
+
+display: flex;
+
+gap: 25px;
+
+align-items: flex-start;
+
 }
 
 .gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    border: 0.4px solid #222;
-    box-sizing: border-box;
+
+width: 50%;
+
+border-radius: 6px;
+
+box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+
+border: 0.4px solid #222;
+
 }
 
+/* Description box */
+
 .gallery-description-box {
-    width: 100%;
-    margin-top: 12px;
-    background: white;
-    padding: 16px;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    font-size: 16px;
-    border: 0.01px solid #222;
-    box-sizing: border-box;
+
+width: 30%;
+
+background: white;
+
+padding: 18px;
+
+border-radius: 6px;
+
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+font-size: 16px;
+
+border: 0.01px solid #222;
+
 }
 
 .gallery-description-box h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    color: #0b1e3d;
+
+margin-top: 0;
+
+color: #0b1e3d;
+
 }
 
 /* ===============================
@@ -338,96 +491,140 @@ a:hover {
 =============================== */
 
 @media (max-width: 800px) {
-    body {
-        flex-direction: column;
-    }
 
-    .navbar {
-        width: 100%;
-        min-width: 0;
-        min-height: auto;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+body {
 
-    .name-box {
-        width: 100%;
-        text-align: center;
-        box-sizing: border-box;
-    }
+flex-direction: column;
 
-    .navbar button {
-        flex-grow: 1;
-        text-align: center;
-        border-left: none;
-        font-size: 15px;
-    }
+}
 
-    .navbar button.active-btn {
-        border-left: none;
-        border-bottom: 4px solid white;
-    }
+/* Sidebar becomes topbar */
 
-    .window {
-        padding: 25px;
-        max-width: none;
-    }
+.navbar {
 
-    .about-container,
-    .about-text,
-    .address-block {
-        width: 100%;
-        max-width: none;
-    }
+width: 100%;
 
-    .profile-left {
-        width: 300px;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+flex-direction: row;
 
-    .profile-photo {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 3 / 4;
-    }
+flex-wrap: wrap;
 
-    .gallery {
-        grid-template-columns: 1fr;
-        max-width: none;
-    }
+min-height: auto;
+
+}
+
+.name-box {
+
+width: 100%;
+
+text-align: center;
+
+}
+
+/* Buttons horizontal */
+
+.navbar button {
+
+flex-grow: 1;
+
+text-align: center;
+
+border-left: none;
+
+font-size: 15px;
+
+}
+
+.window {
+
+padding: 25px;
+
+}
+
+.about-container {
+
+flex-direction: column;
+
+align-items: center;
+
+text-align: center;
+
+}
+
+.profile-left {
+
+width: 300px;
+
+max-width: 100%;
+
+}
+
+.profile-photo {
+
+width: 100%;
+
+height: auto;
+
+aspect-ratio: 3 / 4;
+
+}
+
+/* Gallery mobile */
+
+.gallery-item {
+
+flex-direction: column;
+
+}
+
+.gallery-item img {
+
+width: 100%;
+
+}
+
+.gallery-description-box {
+
+width: 100%;
+
+margin-top: 12px;
+
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
+
 
 <!-- ===============================
      SIDEBAR
 ================================ -->
 
 <div class="navbar">
-    <div class="name-box">
-        Aikya Banerjee
-    </div>
 
-    <button onclick="showWindow('home', event)" class="active-btn">
-        Home
-    </button>
+<div class="name-box">
+Aikya Banerjee
+</div>
 
-    <button onclick="showWindow('research', event)">
-        Research
-    </button>
+<button onclick="showWindow('home')" class="active-btn">
+Home
+</button>
 
-    <button onclick="showWindow('teaching', event)">
-        Teaching
-    </button>
+<button onclick="showWindow('research')">
+Research
+</button>
 
-    <button onclick="showWindow('gallery', event)">
-        Art Gallery
-    </button>
+<button onclick="showWindow('teaching')">
+Teaching
+</button>
+
+<button onclick="showWindow('gallery')">
+Art Gallery
+</button>
+
 </div>
 
 <!-- ===============================
@@ -435,88 +632,65 @@ a:hover {
 ================================ -->
 
 <div id="home" class="window active">
-    <h2>About</h2>
 
-    <div class="about-container">
-        <div class="profile-left">
-            <img src="profile.jpg" class="profile-photo" alt="Profile photo">
+<h2>About</h2>
 
-            <div class="profile-links">
-                <a href="https://orcid.org/0009-0004-6288-0362" class="icon-btn orcid-btn">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/orcid.svg" alt="ORCID">
-                </a>
+<div class="about-container">
 
-                <a href="https://scholar.google.com/citations?user=y1PQC8oAAAAJ&hl=en" class="icon-btn scholar-btn">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googlescholar.svg" alt="Google Scholar">
-                </a>
+<div class="profile-left">
 
-                <a href="CV.pdf" class="icon-btn cv-btn">
-                    CV
-                </a>
-            </div>
-        </div>
+<img src="profile.jpg" class="profile-photo">
 
-        <div class="about-text">
-            <p>
-                Hello!
-            </p>
+<div class="profile-links">
 
-            <p>
-                I am a first-year <span class="highlight-italics">D.Phil.</span> student at the
-                <span class="highlight-italics">Department of Physics</span> 
-                (Astrophysics sub-department),
-                <span class="highlight-italics">University of Oxford, U.K.</span>, currently working with
-                <a href="https://www-thphys.physics.ox.ac.uk/people/AlexanderSchekochihin/" target="_blank" rel="noopener noreferrer">
-                    Prof. Alex Schekochihin
-                </a>
-                and
-                <a href="https://scholar.google.com/citations?user=1e8E6KcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-                    Dr. Archie Bott
-                </a>.
-                My studentship is funded by the
-                <span class="highlight-italics">Clarendon Fund Scholarship</span>
-                (<a href="https://www.ox.ac.uk/clarendon/scholar-class-lists/scholars-2020-21-to-2029-30" target="_blank" rel="noopener noreferrer">link</a>).
-                My broad research interests are —
-                <span class="highlight-italics">plasma physics</span>,
-                <span class="highlight-italics">turbulence</span>, and
-                <span class="highlight-italics">statistical mechanics</span>.
-                I am currently working on anomalous transport properties in weakly collisional plasma.
-            </p>
+<a href="https://orcid.org/0009-0004-6288-0362" class="icon-btn orcid-btn">
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/orcid.svg">
+</a>
 
-            <p>
-                Before coming to Oxford, I did Integrated B.S.-M.S. in Physical Sciences from
-                <span class="highlight-italics">
-                    Indian Institute of Science Education and Research (IISER) Kolkata
-                </span>,
-                where I primarily worked on non-equilibrium statistical mechanics and turbulence.
-                I completed my MS thesis on
-                <span class="highlight-italics">
-                    Many Body Chaos in Fully Developed Turbulence
-                </span>
-                (<a href="thesis.pdf" target="_blank" rel="noopener noreferrer">Thesis</a>)
-                from
-                <span class="highlight-italics">
-                    International Centre for Theoretical Sciences (ICTS), Bengaluru
-                </span>
-                (Mentor:
-                <a href="https://www.icts.res.in/people/samriddhi-sankar-ray" target="_blank" rel="noopener noreferrer">
-                    Prof. Samriddhi Sankar Ray
-                </a>).
-            </p>
+<a href="https://scholar.google.com/citations?user=y1PQC8oAAAAJ&hl=en" class="icon-btn scholar-btn">
+<img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googlescholar.svg">
+</a>
 
-            <p>
-                Thanks for dropping by! Feel free to reach out if you have any queries.
-            </p>
-        </div>
-    </div>
+<a href="CV.pdf" class="icon-btn cv-btn">
+CV
+</a>
 
-    <div class="address-block">
-        Address: Department of Physics, University of Oxford,<br>
-        Denys Wilkinson Building, Keble Road,<br>
-        Oxford OX1 3RH, U.K.<br><br>
+</div>
 
-        Email: aikya [dot] banerjee [at] merton [dot] ox [dot] ac [dot] uk
-    </div>
+</div>
+
+<div>
+<p>
+Hello! 
+</p>
+
+<p>I am a first-year <span class="highlight-italics">D.Phil.</span> student at the <span class="highlight-italics">Department of Physics</span> (Astrophysics sub-department), <span class="highlight-italics">University of Oxford, U.K.</span>, currently working with <a href="https://www-thphys.physics.ox.ac.uk/people/AlexanderSchekochihin/" target="_blank" rel="noopener noreferrer">Prof. Alex Schekochihin</a> and <a href="https://scholar.google.com/citations?user=1e8E6KcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Dr. Archie Bott</a>.
+My studentship is funded by the  
+<span class="highlight-italics">Clarendon Fund Scholarship</span> 
+(<a href="https://www.ox.ac.uk/clarendon/scholar-class-lists/scholars-2020-21-to-2029-30" target="_blank" rel="noopener noreferrer">link</a>).
+My broad research interests are --- <span class="highlight-italics">plasma physics</span>, <span class="highlight-italics">turbulence</span>, and <span class="highlight-italics">statistical mechanics</span>. 
+I am currently working on anomalous transport properties in weakly collisional plasma.
+</p>
+
+<p>
+Before coming to Oxford, I did Integrated B.S.-M.S. in Physical Sciences from 
+<span class ="highlight-italics"> Indian Institute of Science Education and Research (IISER) Kolkata</span>, where I primarily worked on non-equilibrium statistical mechanics and turbulence.
+I completed my MS thesis on <span class="highlight-italics">Many Body Chaos in Fully Developed Turbulence</span> (<a href="thesis.pdf" target="_blank" rel="noopener noreferrer">Thesis</a>) from 
+<span class="highlight-italics"> International Centre for Theoretical Sciences (ICTS), Bengaluru</span> (Mentor: 
+<a href="https://www.icts.res.in/people/samriddhi-sankar-ray" target="_blank" rel="noopener noreferrer">Prof. Samriddhi Sankar Ray</a>).
+</p>
+
+<p>
+Thanks for dropping by! Feel free to reach out if you have any queries.
+</p>
+
+</div>
+
+</div>
+
+Address: Department of Physics, University of Oxford, Denys Wilkinson Building, Keble Road, Oxford OX1 3RH, U.K.<br>
+Email: aikya [dot] banerjee [at] merton [dot] ox [dot] ac [dot] uk
+
 </div>
 
 <!-- ===============================
@@ -524,173 +698,183 @@ a:hover {
 ================================ -->
 
 <div id="research" class="window">
-    <div class="section">
-        <h2>Overview</h2>
 
-        <p>
-            My primary area of interest is plasma physics, turbulence and statistical mechanics.
-            As a part of my DPhil studentship at Oxford, I am currently studying anomalous transport
-            properties in weakly collisional plasma with a particular interest in anomalous diffusion
-            due to micro-instabilities under the supervision of
-            <a href="https://scholar.google.com/citations?user=1e8E6KcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-                Dr. Archie Bott
-            </a>
-            and
-            <a href="https://www-thphys.physics.ox.ac.uk/people/AlexanderSchekochihin/" target="_blank" rel="noopener noreferrer">
-                Prof. Alex Schekochihin
-            </a>.
-            My work contains both analytical studies and numerical experiments, particularly
-            <span class="highlight-italics">particle in cell</span> simulation.
-        </p>
+<div class="section">
 
-        <p>
-            During my undergraduate years, I have worked in turbulence, statistical mechanics and
-            magneto-hydrodynamics particularly nature of turbulent flow and its statistics,
-            non-equilibrium phase separation, criticality and marginality and decaying MHD turbulence.
-        </p>
-    </div>
+<h2>Overview</h2>
 
-    <div class="section">
-        <h2>Publications</h2>
+<p>
 
-        <ol class="pub-list" reversed>
-            <li class="pub-item">
-                <span class="highlight-italics">
-                    Parity dependent scaling of velocity gradients in turbulence
-                </span>,
+My primary area of interest is plasma physics, turbulence and statistical mechanics.
+As a part of my DPhil studentship at Oxford, I am currently studying anomalous transport properties in weakly collisional plasma with a particular interest in anomalous diffusion due to micro-instabilities under the supervision of <a href="https://scholar.google.com/citations?user=1e8E6KcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Dr. Archie Bott</a> and <a href="https://www-thphys.physics.ox.ac.uk/people/AlexanderSchekochihin/" target="_blank" rel="noopener noreferrer">Prof. Alex Schekochihin</a>.
+My work contains both analytical studies and numerical experiments, particularly <span class="highlight-italics">particle in cell</span> simulation.<br>
+</p>
 
-                A. Dey,
-                R. Mukherjee,
-                <strong>A. Banerjee</strong>,
-                S. S. Ray,
+<p>
+During my undergraduate years, I have worked in turbulence, statistical mechanics and magneto-hydrodynamics particularly nature of turbulent flow and its statistics, non-equilibrium phase separation, criticality and marginality and decaying MHD turbulence.
+</p>
 
-                <a href="https://doi.org/10.48550/arXiv.2605.19921" target="_blank" rel="noopener noreferrer">
-                    arXiv:2605.19921
-                </a>
-            </li>
+</div>
 
-            <li class="pub-item">
-                <span class="highlight-italics">
-                    Towards a matrix product ansatz in two dimensions
-                </span>,
+<div class="section">
 
-                C.G. Ray,
-                <strong>A. Banerjee</strong>,
-                P.K. Mohanty,
+<h2>Publications</h2>
 
-                <a href="https://doi.org/10.48550/arXiv.2605.20160" target="_blank" rel="noopener noreferrer">
-                    arXiv:2605.20160
-                </a>
-            </li>
+<ol class="pub-list" reversed>
+<li class="pub-item">
 
-            <li class="pub-item">
-                <span class="highlight-italics">
-                    Intermittent fluctuations determine the nature of chaos in turbulence
-                </span>,
+<span class="highlight-italics">
+Parity dependent scaling of velocity gradients in turbulence
+</span>,
 
-                <strong>A. Banerjee*</strong>,
-                R. Mukherjee*,
-                S. D. Murugan,
-                S. Bhattacharjee,
-                S. S. Ray,
-                (* contributed equally)
+A. Dey,
+R. Mukherjee
+<strong>A. Banerjee</strong>,  
+S. S. Ray,
 
-                <a href="https://doi.org/10.1103/1dj2-zw28" target="_blank" rel="noopener noreferrer">
-                    Physical Review Letters 136, 214001
-                </a>
-            </li>
+<a href="https://doi.org/10.48550/arXiv.2605.19921"
+target="_blank" rel="noopener noreferrer">
+arXiv:2605.19921
 
-            <li class="pub-item">
-                <span class="highlight-italics">
-                    Turbulent magnetic decay controlled by two conserved quantities
-                </span>,
+</a>
 
-                A. Brandenburg,
-                <strong>A. Banerjee</strong>,
+</li>
 
-                <a href="https://doi.org/10.1017/S0022377824001508" target="_blank" rel="noopener noreferrer">
-                    Journal of Plasma Physics 91 (1), E5 (2025)
-                </a>
-            </li>
+<li class="pub-item">
 
-            <li class="pub-item">
-                <span class="highlight-italics">
-                    Geometric percolation in the Ashkin Teller Model
-                </span>,
 
-                <strong>A. Banerjee</strong>,
-                P. Jana,
-                P. K. Mohanty,
+<span class="highlight-italics">
+Towards a matrix product ansatz in two dimensions
+</span>,
 
-                <a href="https://doi.org/10.1103/PhysRevB.111.014403" target="_blank" rel="noopener noreferrer">
-                    Physical Review B 111 (1), 014403 (2025)
-                </a>
-            </li>
+C.G. Ray
+<strong>A. Banerjee</strong>,  
+P.K. Mohanty
+<a href="https://doi.org/10.48550/arXiv.2605.20160"
+target="_blank" rel="noopener noreferrer">
 
-            <li class="pub-item">
-                <span class="highlight-italics">
-                    Site-percolation transition of run-and-tumble particles
-                </span>,
+arXiv:2605.20160
 
-                S. K. Saha,
-                <strong>A. Banerjee</strong>,
-                P. K. Mohanty,
+</a>
 
-                <a href="https://doi.org/10.1039/D4SM00838C" target="_blank" rel="noopener noreferrer">
-                    Soft Matter 20 (47), 9503–9509 (2024)
-                </a>
-            </li>
-        </ol>
-    </div>
+</li>
 
-    <div class="section">
-        <h2>Previous Research Experiences</h2>
+<li class="pub-item">
+   
+<span class="highlight-italics">
+Intermittent fluctuations determine the nature of chaos in turbulence
+</span>,
 
-        <ul>
-            <li>
-                MS Thesis (Aug, 24 - Apr, 25) — International Centre for Theoretical Sciences,
-                Bengaluru. Advisor:
-                <a href="https://www.icts.res.in/people/samriddhi-sankar-ray" target="_blank" rel="noopener noreferrer">
-                    Prof. Samriddhi Sankar Ray
-                </a>.
-                Thesis title:
-                <span class="highlight-italics">
-                    Many Body Chaos in Fully Developed Turbulence
-                </span>
-                (<a href="thesis.pdf" target="_blank" rel="noopener noreferrer">Thesis</a>).
-            </li>
+<strong>A. Banerjee*</strong>,  
+R. Mukherjee*,  
+S. D. Murugan,  
+S. Bhattacharjee,  
+S. S. Ray,
+(* contributed equally)
+<a href="https://doi.org/10.1103/1dj2-zw28"
+target="_blank" rel="noopener noreferrer">
 
-            <li>
-                Student (Mar, 23 - May, 24) — Indian Institute of Science Education and Research
-                Kolkata. Mentor:
-                <a href="https://scholar.google.com/citations?user=CHrmyQIAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-                    Prof. P. K. Mohanty
-                </a>.
-            </li>
+Physical Review Letters 136, 214001
 
-            <li>
-                Remote Internship (Mar - June, 24) — Nordic Institute of Theoretical Physics
-                (NORDITA). Mentor:
-                <a href="https://axelbrandenburg.github.io/" target="_blank" rel="noopener noreferrer">
-                    Prof. Axel Brandenburg
-                </a>.<br>
-                On
-                <span class="highlight-italics">
-                    Relevant decay law and conserved quantities in decaying MHD turbulence
-                </span>.
-            </li>
+</a>
 
-            <li>
-                Summer Internship (May - July, 24) — Johannes Gutenburg University of Mainz.
-                Mentor:
-                <a href="https://scholar.google.com/citations?hl=de&user=RTshg4wAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">
-                    Prof. Peter Virnau
-                </a>.<br>
-                This project was funded by the German Academic Exchange Service (DAAD) -
-                Working Internship in Science and Engineering (WISE) programme.
-            </li>
-        </ul>
-    </div>
+</li>
+
+<li class="pub-item">
+
+<span class="highlight-italics">
+
+Turbulent magnetic decay controlled by two conserved quantities
+
+</span>,
+
+A. Brandenburg,  
+<strong>A. Banerjee</strong>,
+
+<a href="https://doi.org/10.1017/S0022377824001508"
+target="_blank" rel="noopener noreferrer">
+
+Journal of Plasma Physics 91 (1), E5 (2025)
+
+</a>
+
+</li>
+
+
+<li class="pub-item">
+
+<span class="highlight-italics">
+
+Geometric percolation in the Ashkin Teller Model
+
+</span>,
+
+<strong>A. Banerjee</strong>,  
+P. Jana,  
+P. K. Mohanty,
+
+<a href="https://doi.org/10.1103/PhysRevB.111.014403"
+target="_blank" rel="noopener noreferrer">
+
+Physical Review B 111 (1), 014403 (2025)
+
+</a>
+
+</li>
+
+
+<li class="pub-item">
+
+<span class="highlight-italics">
+
+Site-percolation transition of run-and-tumble particles
+
+</span>,
+
+S. K. Saha,  
+<strong>A. Banerjee</strong>,  
+P. K. Mohanty,
+
+<a href="https://doi.org/10.1039/D4SM00838C"
+target="_blank" rel="noopener noreferrer">
+
+Soft Matter 20 (47), 9503–9509 (2024)
+
+</a>
+
+</li>
+
+</ol>
+
+</div>
+
+<div class="section">
+
+<h2>Previous Research Experiences</h2>
+
+<ul>
+
+<li>
+MS Thesis (Aug, 24 - Apr, 25)— International Centre for Theoretical Sciences, Bengaluru. (Advisor: <a href="https://www.icts.res.in/people/samriddhi-sankar-ray" target="_blank" rel="noopener noreferrer">Prof. Samriddhi Sankar Ray</a>) Thesis title: <span class="highlight-italics">Many Body Chaos in Fully Developed Turbulence</span> (<a href="thesis.pdf" target="_blank" rel="noopener noreferrer">Thesis</a>)<br>
+</li>
+
+<li>
+Student (Mar,23 - May, 24)-- Indian Institute of Science Education and Research Kolkata (Mentor: <a href="https://scholar.google.com/citations?user=CHrmyQIAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Prof. P. K. Mohanty</a>)
+</li>
+
+<li>
+Remote Internship (Mar - June, 24)-- Nordic Institute of Theoretical Physics (NORDITA) (Mentor: <a href="https://axelbrandenburg.github.io/" target="_blank" rel="noopener noreferrer">Prof. Axel Brandenburg</a>)<br>
+On <span class="highlight-italics">Relevant decay law and conserved quantities in decaying MHD turbulence</span>.
+</li>
+
+<li>
+Summer Internship (May - July, 24)-- Johannes Gutenburg University of Mainz (Mentor: <a href="https://scholar.google.com/citations?hl=de&user=RTshg4wAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener noreferrer">Prof. Peter Virnau</a>)<br>
+This project was funded by the German Academic Exchange Service (DAAD) - Working Internship in Science and Engineering (WISE) programme.
+</li>
+
+</ul>
+
+</div>
 </div>
 
 <!-- ===============================
@@ -698,41 +882,63 @@ a:hover {
 ================================ -->
 
 <div id="teaching" class="window">
-    <div class="section">
-        <h2>Upcoming Teachings</h2>
+<div class="section">
 
-        <p>
-            <strong>Condensed Matter Theory</strong> course (B6) for third year undergraduate
-            students at Merton College, University of Oxford, U.K., 2026-2027.
-        </p>
-    </div>
+<h2>Upcoming Course</h2>
 
-    <div class="section">
-        <h2>Previous Teaching Experiences</h2>
+I will be teaching Condensed Matter (B6) for third year undergraduate students at Merton College, University of Oxford in 2026-27. 
+<table class="teaching-table">
 
-        <ul>
-            <li>
-                Graduate Teaching Assistant —
-                <strong>Statistical Physics and Thermodynamics</strong> (A1) for second year
-                undergraduate students at Merton College, University of Oxford, U.K., 2025-2026.
-                Course Instructor: Prof. Alex Schekochihin.
-            </li>
+<tr>
 
-            <li>
-                Teaching Assistant —
-                <strong>Thermal Physics</strong> (PH2202) for second year undergraduate students
-                at Indian Institute of Science Education and Research Kolkata in Spring-2024.
-                Course Instructor: Prof. Koushik Dutta.
-            </li>
+<th>Week</th>
+<th>Date</th>
+<th>Time</th>
+<th>Place</th>
+<th>Year</th>
+<th>Class / Tutes</th>
+<th>Notes</th>
 
-            <li>
-                Teaching Assistant —
-                <strong>Mechanics-I</strong> (PH1101) for first year undergraduate students
-                at Indian Institute of Science Education and Research Kolkata in Fall-2023.
-                Course Instructor: Prof. Golam Mortuza Hossein.
-            </li>
-        </ul>
-    </div>
+</tr>
+
+<tr>
+<td>--</td>
+<td>--</td> 
+<td>--</td>
+<td>--</td>
+<td>--</td> 
+<td>Will be updated soon </td>
+<td>-- </td>
+</tr>
+</table>
+
+</div>
+
+<div class="section">
+
+<h2>Previous Teaching Experiences</h2>
+
+<ul>
+
+<li>
+Graduate Teaching Assistant —
+<strong>Statistical Physics and Thermodynamics</strong> (PH2202) for second year undergraduate students at Merton College, University of Oxford (2025-26). (Course Instructor: Prof. Alex Schekochihin).
+</li>
+
+<li>
+Teaching Assistant —
+<strong>Thermal Physics</strong> (PH2202) for second year undergraduate students at Indian Institute of Science Education and Research Kolkata in Spring-2024. (Course Instructor: Prof. Koushik Dutta).
+</li>
+
+<li>
+Teaching Assistant —
+<strong>Mechanics-I</strong> (PH1101) for first year undergraduate students at Indian Institute of Science Education and Research Kolkata in Fall-2023. (Course Instructor: Prof. Golam Mortuza Hossein).
+</li>
+
+</ul>
+
+</div>
+
 </div>
 
 <!-- ===============================
@@ -740,52 +946,100 @@ a:hover {
 ================================ -->
 
 <div id="gallery" class="window">
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="example1.jpg" alt="Landscape painting">
+<div class="gallery">
 
-            <div class="gallery-description-box">
-                <h3>Landscape (2017)</h3>
-                <p>Watercolor on A4 paper.</p>
-            </div>
-        </div>
+<div class="gallery-item">
 
-        <div class="gallery-item">
-            <img src="example2.jpg" alt="Nature painting">
+<img src="example1.jpg">
 
-            <div class="gallery-description-box">
-                <h3>Nature (2020-21)</h3>
-                <p>Acrylic on wall (6ft x 4ft).</p>
-            </div>
-        </div>
+<div class="gallery-description-box">
 
-        <div class="gallery-item">
-            <img src="example3.jpg" alt="Path painting">
+<h3>Landscape (2017)</h3>
 
-            <div class="gallery-description-box">
-                <h3>Path (2015)</h3>
-                <p>Watercolor on paper (A4 paper).</p>
-            </div>
-        </div>
+<p>
 
-        <div class="gallery-item">
-            <img src="example4.jpg" alt="Indian village painting">
+Watercolor on A4 paper.
 
-            <div class="gallery-description-box">
-                <h3>Indian village (2016)</h3>
-                <p>Watercolor on A4 paper.</p>
-            </div>
-        </div>
+</p>
 
-        <div class="gallery-item">
-            <img src="example5.jpg" alt="Indian village painting">
+</div>
 
-            <div class="gallery-description-box">
-                <h3>Indian village (2021)</h3>
-                <p>Acrylic on canvas.</p>
-            </div>
-        </div>
-    </div>
+</div>
+
+<div class="gallery-item">
+
+<img src="example2.jpg">
+
+<div class="gallery-description-box">
+
+<h3>Nature (2020-21)</h3>
+
+<p>
+
+Acrylic on wall (6ft x 4ft).
+
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="example3.jpg">
+
+<div class="gallery-description-box">
+
+<h3>Path (2015)</h3>
+
+<p>
+
+Watercolor on paper (A4 paper).
+
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="example4.jpg">
+
+<div class="gallery-description-box">
+
+<h3>Indian village(2016)</h3>
+
+<p>
+
+Watercolor on A4 paper.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="example5.jpg">
+
+<div class="gallery-description-box">
+
+<h3>Indian village (2021)</h3>
+
+<p>
+
+Acrylic on canvas.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 <!-- ===============================
@@ -793,20 +1047,35 @@ a:hover {
 ================================ -->
 
 <script>
-function showWindow(id, event) {
-    let windows = document.getElementsByClassName("window");
-    let buttons = document.querySelectorAll(".navbar button");
 
-    for (let i = 0; i < windows.length; i++) {
-        windows[i].classList.remove("active");
-    }
+function showWindow(id) {
 
-    buttons.forEach(btn => btn.classList.remove("active-btn"));
+let windows =
+document.getElementsByClassName("window");
 
-    document.getElementById(id).classList.add("active");
-    event.target.classList.add("active-btn");
+let buttons =
+document.querySelectorAll(".navbar button");
+
+for (let i = 0; i < windows.length; i++) {
+
+windows[i].classList.remove("active");
+
 }
+
+buttons.forEach(btn =>
+btn.classList.remove("active-btn")
+);
+
+document.getElementById(id)
+.classList.add("active");
+
+event.target.classList
+.add("active-btn");
+
+}
+
 </script>
 
 </body>
+
 </html>
