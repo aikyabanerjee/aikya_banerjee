@@ -302,7 +302,7 @@
             font-variation-settings: "SOFT" 26, "WONK" 1, "opsz" 96;
             font-size: clamp(25px, 2.6vw, 30px);
             font-weight: 600;
-            text-transform: lowercase;
+            text-transform: none;
             letter-spacing: -0.014em;
             line-height: 1.15;
             color: var(--accent);
@@ -313,11 +313,13 @@
         .section h2::after {
             content: "";
             display: block;
-            width: 34px;
-            height: 2px;
-            margin-top: 12px;
-            margin-bottom: 22px;
-            background: var(--accent);
+            width: clamp(72px, 12vw, 120px);
+            height: 3px;
+            margin-top: 11px;
+            margin-bottom: 24px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            opacity: 0.9;
             transform-origin: left;
             animation: rule-in 0.7s 0.25s var(--ease) both;
         }
