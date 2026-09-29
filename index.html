@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aikya Banerjee</title>
 
-    <meta name="theme-color" content="#5C1803">
+    <meta name="theme-color" content="#782A0D">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..600&display=swap" rel="stylesheet">
@@ -24,8 +24,8 @@
             --muted: #848b96;
 
             /* default accent — each tab overrides the pair below */
-            --accent: #5C1803;
-            --accent-2: #d9865c;
+            --accent: #782A0D;
+            --accent-2: #b8532f;
 
             --rule: rgba(26, 29, 33, 0.14);
             --rule-soft: rgba(26, 29, 33, 0.075);
@@ -41,16 +41,16 @@
         }
 
         /* per-tab colour identity */
-        #home     { --accent: #5C1803; --accent-2: #d9865c; }
-        #research { --accent: #5C1803; --accent-2: #d9865c; }
-        #teaching { --accent: #5C1803; --accent-2: #d9865c; }
-        #gallery  { --accent: #5C1803; --accent-2: #d9865c; }
+        #home     { --accent: #782A0D; --accent-2: #b8532f; }
+        #research { --accent: #782A0D; --accent-2: #b8532f; }
+        #teaching { --accent: #782A0D; --accent-2: #b8532f; }
+        #gallery  { --accent: #782A0D; --accent-2: #b8532f; }
 
         /* the masthead picks up whichever tab is open */
-        body:has(#home.active)     .navbar { --accent: #5C1803; --accent-2: #d9865c; }
-        body:has(#research.active) .navbar { --accent: #5C1803; --accent-2: #d9865c; }
-        body:has(#teaching.active) .navbar { --accent: #5C1803; --accent-2: #d9865c; }
-        body:has(#gallery.active)  .navbar { --accent: #5C1803; --accent-2: #d9865c; }
+        body:has(#home.active)     .navbar { --accent: #782A0D; --accent-2: #b8532f; }
+        body:has(#research.active) .navbar { --accent: #782A0D; --accent-2: #b8532f; }
+        body:has(#teaching.active) .navbar { --accent: #782A0D; --accent-2: #b8532f; }
+        body:has(#gallery.active)  .navbar { --accent: #782A0D; --accent-2: #b8532f; }
 
         /* ===============================
            GLOBAL TYPOGRAPHY
@@ -118,7 +118,7 @@
                 radial-gradient(34% 58% at 16% 50%, var(--accent-2), transparent 70%),
                 radial-gradient(30% 54% at 58% 46%, var(--accent-2), transparent 72%),
                 radial-gradient(26% 50% at 90% 54%, var(--accent-2), transparent 70%);
-            opacity: 0.52;
+            opacity: 0.75;
             filter: blur(14px);
             animation: hue-drift 19s ease-in-out infinite alternate;
         }
@@ -399,12 +399,14 @@
 
         /* the portrait becomes a banner, as on the reference site */
         .profile-photo {
-            width: 100%;
+            width: 70%;
             max-width: none;
-            height: clamp(190px, 27vw, 300px);
+            height: auto;
+            aspect-ratio: 4 / 3;
             object-fit: cover;
-            object-position: 28% 32%;
+            object-position: 50% 30%;
             display: block;
+            margin: 0 auto;
             border: none;
             border-radius: 3px;
             background: var(--paper-2);
@@ -457,7 +459,7 @@
         .profile-links {
             margin-top: 18px;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
             gap: 10px;
         }
@@ -773,7 +775,7 @@
 
             .profile-left { width: 100%; max-width: none; margin-bottom: 26px; }
 
-            .profile-photo { width: 100%; height: clamp(180px, 46vw, 240px); }
+            .profile-photo { width: 70%; height: auto; }
 
             .section + .section { margin-top: 46px; }
 
