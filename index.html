@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aikya Banerjee</title>
 
-    <meta name="theme-color" content="#1d4977">
+    <meta name="theme-color" content="#b8532f">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..600&display=swap" rel="stylesheet">
@@ -17,15 +17,15 @@
         =============================== */
 
         :root {
-            --paper: #fcfbf7;
-            --paper-2: #f5f2ea;
+            --paper: #FFEEDE;
+            --paper-2: #FFEEDE;
             --ink: #1a1d21;
             --ink-soft: #454b53;
             --muted: #848b96;
 
             /* default accent — each tab overrides the pair below */
-            --accent: #1d4977;
-            --accent-2: #4a86b8;
+            --accent: #b8532f;
+            --accent-2: #d9865c;
 
             --rule: rgba(26, 29, 33, 0.14);
             --rule-soft: rgba(26, 29, 33, 0.075);
@@ -41,16 +41,16 @@
         }
 
         /* per-tab colour identity */
-        #home     { --accent: #1d4977; --accent-2: #4a86b8; }
-        #research { --accent: #16645f; --accent-2: #38a29a; }
-        #teaching { --accent: #7b3f63; --accent-2: #b2688f; }
-        #gallery  { --accent: #a0562a; --accent-2: #d9924f; }
+        #home     { --accent: #b8532f; --accent-2: #d9865c; }
+        #research { --accent: #b8532f; --accent-2: #d9865c; }
+        #teaching { --accent: #b8532f; --accent-2: #d9865c; }
+        #gallery  { --accent: #b8532f; --accent-2: #d9865c; }
 
         /* the masthead picks up whichever tab is open */
-        body:has(#home.active)     .navbar { --accent: #1d4977; --accent-2: #4a86b8; }
-        body:has(#research.active) .navbar { --accent: #16645f; --accent-2: #38a29a; }
-        body:has(#teaching.active) .navbar { --accent: #7b3f63; --accent-2: #b2688f; }
-        body:has(#gallery.active)  .navbar { --accent: #a0562a; --accent-2: #d9924f; }
+        body:has(#home.active)     .navbar { --accent: #b8532f; --accent-2: #d9865c; }
+        body:has(#research.active) .navbar { --accent: #b8532f; --accent-2: #d9865c; }
+        body:has(#teaching.active) .navbar { --accent: #b8532f; --accent-2: #d9865c; }
+        body:has(#gallery.active)  .navbar { --accent: #b8532f; --accent-2: #d9865c; }
 
         /* ===============================
            GLOBAL TYPOGRAPHY
@@ -58,7 +58,10 @@
 
         * { box-sizing: border-box; }
 
-        html { -webkit-text-size-adjust: 100%; }
+        html {
+            -webkit-text-size-adjust: 100%;
+            background: #FFEEDE;
+        }
 
         body {
             margin: 0;
@@ -70,7 +73,7 @@
             font-size: 16.5px;
             line-height: 1.8;
             color: var(--ink-soft);
-            background: var(--paper);
+            background: #FFEEDE;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -235,6 +238,7 @@
             max-width: var(--content);
             margin: 0 auto;
             padding: clamp(30px, 4.5vw, 54px) var(--gutter) 110px;
+            background: #FFEEDE;
         }
 
         .window.active { display: block; }
