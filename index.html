@@ -41,16 +41,18 @@
         }
 
         /* per-tab colour identity */
-        #home     { --accent: #782A0D; --accent-2: #b8532f; }
-        #research { --accent: #782A0D; --accent-2: #b8532f; }
-        #teaching { --accent: #782A0D; --accent-2: #b8532f; }
-        #gallery  { --accent: #782A0D; --accent-2: #b8532f; }
+        #home         { --accent: #782A0D; --accent-2: #b8532f; }
+        #research     { --accent: #782A0D; --accent-2: #b8532f; }
+        #publications { --accent: #782A0D; --accent-2: #b8532f; }
+        #teaching     { --accent: #782A0D; --accent-2: #b8532f; }
+        #gallery      { --accent: #782A0D; --accent-2: #b8532f; }
 
         /* the masthead picks up whichever tab is open */
-        body:has(#home.active)     .navbar { --accent: #782A0D; --accent-2: #b8532f; }
-        body:has(#research.active) .navbar { --accent: #782A0D; --accent-2: #b8532f; }
-        body:has(#teaching.active) .navbar { --accent: #782A0D; --accent-2: #b8532f; }
-        body:has(#gallery.active)  .navbar { --accent: #782A0D; --accent-2: #b8532f; }
+        body:has(#home.active)         .navbar { --accent: #782A0D; --accent-2: #b8532f; }
+        body:has(#research.active)     .navbar { --accent: #782A0D; --accent-2: #b8532f; }
+        body:has(#publications.active) .navbar { --accent: #782A0D; --accent-2: #b8532f; }
+        body:has(#teaching.active)     .navbar { --accent: #782A0D; --accent-2: #b8532f; }
+        body:has(#gallery.active)      .navbar { --accent: #782A0D; --accent-2: #b8532f; }
 
         /* ===============================
            GLOBAL TYPOGRAPHY
@@ -432,7 +434,8 @@
         p a,
         .window ul li a,
         .pub-item a,
-        .teaching-table a {
+        .teaching-table a,
+        .highlight-card a {
             padding-bottom: 1px;
             background-image:
                 linear-gradient(var(--accent), var(--accent)),
@@ -446,7 +449,8 @@
         p a:hover,
         .window ul li a:hover,
         .pub-item a:hover,
-        .teaching-table a:hover {
+        .teaching-table a:hover,
+        .highlight-card a:hover {
             background-size: 100% 2px, 100% 1px;
         }
 
@@ -527,6 +531,121 @@
         .highlight-bold       { font-weight: 600; color: var(--ink); }
         .highlight-italics    { font-style: italic; color: var(--ink); }
         .highlight-bold-italics { font-weight: 600; font-style: italic; color: var(--ink); }
+
+        /* ===============================
+           RESEARCH HIGHLIGHTS
+        =============================== */
+
+        .highlights-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .highlight-card {
+            position: relative;
+            border: 1.5px solid var(--rule-soft);
+            border-left: 4px solid var(--accent);
+            border-radius: 6px;
+            padding: 24px 26px;
+            background: color-mix(in srgb, var(--accent) 4%, #FFEEDE);
+            transition: box-shadow 0.32s ease, transform 0.32s var(--ease),
+                        border-left-color 0.28s ease;
+            overflow: hidden;
+        }
+
+        .highlight-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: radial-gradient(ellipse at 0% 50%,
+                color-mix(in srgb, var(--accent) 10%, transparent) 0%,
+                transparent 65%);
+            pointer-events: none;
+        }
+
+        .highlight-card:hover {
+            box-shadow: 0 10px 32px -14px rgba(26, 29, 33, 0.28);
+            transform: translateY(-3px);
+        }
+
+        .highlight-card-title {
+            font-family: var(--display);
+            font-variation-settings: "SOFT" 24, "WONK" 1, "opsz" 60;
+            font-size: clamp(16px, 1.7vw, 19px);
+            font-weight: 700;
+            color: var(--ink);
+            margin: 0 0 14px;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+        }
+
+        .highlight-card-body {
+            font-size: 15px;
+            color: var(--ink-soft);
+            line-height: 1.75;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight-card-body p {
+            font-size: 15px;
+            line-height: 1.75;
+            margin-bottom: 10px;
+        }
+
+        .highlight-card-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* OTOC figure — adaptive landscape display */
+        .highlight-figure {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        .highlight-figure img {
+            display: block;
+            max-height: 180px;
+            width: auto;
+            max-width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 0 0 1px var(--rule-soft),
+                        0 4px 14px -6px rgba(26, 29, 33, 0.22);
+            object-fit: contain;
+            flex-shrink: 1;
+            transition: box-shadow 0.3s ease, transform 0.3s var(--ease);
+        }
+
+        .highlight-card:hover .highlight-figure img {
+            box-shadow: 0 0 0 1px var(--rule-soft),
+                        0 8px 24px -8px rgba(26, 29, 33, 0.35);
+            transform: translateY(-2px);
+        }
+
+        .highlight-figure-caption {
+            font-size: 11.5px;
+            color: var(--muted);
+            font-style: italic;
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+            flex-shrink: 0;
+            max-width: 160px;
+        }
+
+        @media (max-width: 600px) {
+            .highlight-figure {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .highlight-figure-caption {
+                max-width: none;
+            }
+        }
 
         /* ===============================
            PUBLICATIONS
@@ -809,6 +928,8 @@
             .pub-item { padding: 16px 0 16px 36px; }
             .pub-item:hover { padding-left: 40px; }
             .pub-item::before { left: 2px; }
+
+            .highlight-card { padding: 18px 18px; }
         }
 
     </style>
@@ -834,6 +955,10 @@
             Research
         </button>
 
+        <button type="button" onclick="showWindow('publications', this)">
+            Publications
+        </button>
+
         <button type="button" onclick="showWindow('teaching', this)">
             Teaching
         </button>
@@ -849,7 +974,7 @@
     ================================ -->
 
     <div id="home" class="window active">
-        
+
         <div class="about-container">
 
             <div class="profile-left">
@@ -972,6 +1097,99 @@
 
         <div class="section">
 
+            <h2>Research Highlights</h2>
+
+            <div class="highlights-grid">
+
+                <div class="highlight-card">
+                    <div class="highlight-card-title">
+                        Intermittent fluctuations determine the nature of chaos in fully developed turbulence
+                    </div>
+                    <div class="highlight-card-body">
+                        <p>
+                            What determines the nature of chaos in fully developed turbulence? While mean-field
+                            theory predicts a Re<sup>0.5</sup> scaling for the Lyapunov exponent, it turns out
+                            the actual scaling is considerably steeper &mdash; Re<sup>&gt;0.5</sup>. Furthermore,
+                            both analytical studies and direct numerical simulations (DNS) reveal that velocity
+                            perturbations have a preferred direction of growth: along the compressional
+                            eigendirection of the stress tensor. Crucially, this steeper scaling originates from
+                            <em>intermittent fluctuations</em> in the eigenvalues of the stress tensor.
+                        </p>
+                        <p>
+                            This work has been featured as an <strong>Editor&rsquo;s Suggestion</strong> in
+                            <a href="https://doi.org/10.1103/1dj2-zw28"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               ><em>Physical Review Letters</em> 136, 214001</a>.
+                            Find out more on the journal webpage.
+                        </p>
+                        <div class="highlight-figure">
+                            <img src="OTOC.png" alt="Out-of-time-order correlator (OTOC) figure">
+                            <span class="highlight-figure-caption">Fig.&thinsp;&mdash; OTOC measurements from DNS.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="section">
+
+            <h2>Previous Research Experiences</h2>
+
+            <ul>
+                <li>
+                    MS Thesis (Aug, 24 - Apr, 25) &mdash; International Centre for Theoretical Sciences,
+                    Bengaluru. Advisor:
+                    <a href="https://www.icts.res.in/people/samriddhi-sankar-ray"
+                       target="_blank"
+                       rel="noopener noreferrer">Prof. Samriddhi Sankar Ray</a>.
+                    Thesis title:
+                    <span class="highlight-italics">Many Body Chaos in Fully Developed Turbulence</span>
+                    (<a href="thesis.pdf" target="_blank" rel="noopener noreferrer">Thesis</a>).
+                </li>
+
+                <li>
+                    Student (Mar, 23 - May, 24) &mdash; Indian Institute of Science Education and Research Kolkata.
+                    Mentor:
+                    <a href="https://scholar.google.com/citations?user=CHrmyQIAAAAJ&hl=en"
+                       target="_blank"
+                       rel="noopener noreferrer">Prof. P. K. Mohanty</a>.
+                </li>
+
+                <li>
+                    Remote Internship (Mar - June, 24) &mdash; Nordic Institute of Theoretical Physics (NORDITA).
+                    Mentor:
+                    <a href="https://axelbrandenburg.github.io/"
+                       target="_blank"
+                       rel="noopener noreferrer">Prof. Axel Brandenburg</a>.<br>
+                    On <span class="highlight-italics">Relevant decay law and conserved quantities in decaying MHD turbulence</span>.
+                </li>
+
+                <li>
+                    Summer Internship (May - July, 24) &mdash; Johannes Gutenberg University of Mainz.
+                    Mentor:
+                    <a href="https://scholar.google.com/citations?hl=de&user=RTshg4wAAAAJ&view_op=list_works&sortby=pubdate"
+                       target="_blank"
+                       rel="noopener noreferrer">Prof. Peter Virnau</a>.<br>
+                    This project was funded by the German Academic Exchange Service (DAAD) - Working Internship
+                    in Science and Engineering (WISE) programme.
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- ===============================
+         PUBLICATIONS
+    ================================ -->
+
+    <div id="publications" class="window">
+
+        <div class="section">
+
             <h2>Publications</h2>
 
             <ol class="pub-list" reversed>
@@ -1064,52 +1282,6 @@
                 </li>
 
             </ol>
-
-        </div>
-
-        <div class="section">
-
-            <h2>Previous Research Experiences</h2>
-
-            <ul>
-                <li>
-                    MS Thesis (Aug, 24 - Apr, 25) &mdash; International Centre for Theoretical Sciences,
-                    Bengaluru. Advisor:
-                    <a href="https://www.icts.res.in/people/samriddhi-sankar-ray"
-                       target="_blank"
-                       rel="noopener noreferrer">Prof. Samriddhi Sankar Ray</a>.
-                    Thesis title:
-                    <span class="highlight-italics">Many Body Chaos in Fully Developed Turbulence</span>
-                    (<a href="thesis.pdf" target="_blank" rel="noopener noreferrer">Thesis</a>).
-                </li>
-
-                <li>
-                    Student (Mar, 23 - May, 24) &mdash; Indian Institute of Science Education and Research Kolkata.
-                    Mentor:
-                    <a href="https://scholar.google.com/citations?user=CHrmyQIAAAAJ&hl=en"
-                       target="_blank"
-                       rel="noopener noreferrer">Prof. P. K. Mohanty</a>.
-                </li>
-
-                <li>
-                    Remote Internship (Mar - June, 24) &mdash; Nordic Institute of Theoretical Physics (NORDITA).
-                    Mentor:
-                    <a href="https://axelbrandenburg.github.io/"
-                       target="_blank"
-                       rel="noopener noreferrer">Prof. Axel Brandenburg</a>.<br>
-                    On <span class="highlight-italics">Relevant decay law and conserved quantities in decaying MHD turbulence</span>.
-                </li>
-
-                <li>
-                    Summer Internship (May - July, 24) &mdash; Johannes Gutenberg University of Mainz.
-                    Mentor:
-                    <a href="https://scholar.google.com/citations?hl=de&user=RTshg4wAAAAJ&view_op=list_works&sortby=pubdate"
-                       target="_blank"
-                       rel="noopener noreferrer">Prof. Peter Virnau</a>.<br>
-                    This project was funded by the German Academic Exchange Service (DAAD) - Working Internship
-                    in Science and Engineering (WISE) programme.
-                </li>
-            </ul>
 
         </div>
 
