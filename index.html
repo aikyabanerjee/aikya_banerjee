@@ -120,7 +120,7 @@
         /* =========================================================
            PANELS
         ========================================================= */
-        main.wrap { padding-top: 52px; padding-bottom: 56px; }
+        main.wrap { padding-top: 52px; padding-bottom: 80px; }
 
         .panel { display: none; }
         .panel.active {
@@ -360,40 +360,6 @@
         }
 
         /* =========================================================
-           TEACHING TABLE  (booktabs-style rules)
-        ========================================================= */
-        .table-scroll {
-            overflow-x: auto;
-            margin-top: 22px;
-        }
-
-        .teaching-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.98rem;
-            border-top: 1.5px solid var(--ink);
-            border-bottom: 1.5px solid var(--ink);
-        }
-
-        .teaching-table th,
-        .teaching-table td {
-            padding: 8px 14px 8px 0;
-            text-align: left;
-            vertical-align: top;
-            white-space: nowrap;
-        }
-
-        .teaching-table th {
-            font-weight: 500;
-            font-variant-caps: small-caps;
-            letter-spacing: 0.04em;
-            color: var(--ink);
-            border-bottom: 0.75px solid var(--ink);
-        }
-
-        .teaching-table td { color: var(--muted); }
-
-        /* =========================================================
            GALLERY
         ========================================================= */
         .gallery {
@@ -437,21 +403,6 @@
         .gallery .work-medium {
             display: block;
             font-size: 0.95rem;
-            color: var(--muted);
-        }
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-        .footer {
-            padding: 0 0 48px;
-            text-align: center;
-        }
-
-        .footer .wrap > div {
-            padding-top: 22px;
-            border-top: 1px solid var(--rule);
-            font-size: 0.92rem;
             color: var(--muted);
         }
 
@@ -633,7 +584,7 @@
 
                     <figure class="figure">
                         <img src="OTOC.jpeg" alt="Out-of-time-order correlator (OTOC) measurements from direct numerical simulations">
-                        <figcaption><span class="label">Figure 1.</span> OTOC measurements from DNS.</figcaption>
+                        <figcaption><span class="label">Figure 1.</span> Decorrelator growth (using DNS).</figcaption>
                     </figure>
                 </article>
             </div>
@@ -752,32 +703,11 @@
                     Merton College, University of Oxford, in 2026&ndash;27.
                 </p>
 
-                <div class="table-scroll">
-                    <table class="teaching-table">
-                        <thead>
-                            <tr>
-                                <th>Week</th>
-                                <th>Date</th>
-                                <th>Time</th>
-                                <th>Place</th>
-                                <th>Year</th>
-                                <th>Class / Tutes</th>
-                                <th>Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>&mdash;</td>
-                                <td>&mdash;</td>
-                                <td>&mdash;</td>
-                                <td>&mdash;</td>
-                                <td>&mdash;</td>
-                                <td><em>Will be updated soon</em></td>
-                                <td>&mdash;</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <p>
+                    To find out more details about the tutorials,
+                    <!-- Replace "#" with the link to your tutorials page -->
+                    <a href="#">click here</a>.
+                </p>
             </div>
 
             <div class="section">
@@ -867,10 +797,6 @@
         </section>
 
     </main>
-
-    <footer class="footer">
-        <div class="wrap"><div>&copy; 2026 Aikya Banerjee</div></div>
-    </footer>
 
     <!-- ===============================
          SCRIPT — each section has its own address (e.g. yoursite/#research)
